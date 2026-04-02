@@ -170,12 +170,12 @@ header {
         
         <select id="whatsappNumber">
             <option value="9779841777776">9841777776</option>
-            <option value="9779842871707">9842971707</option>
+            <option value="9779842971707">9842971707</option>
             <option value="9779851057480">9851057480</option>
         </select>
 
         <button onclick="sendWhatsApp()">Send via WhatsApp</button>
-        <p style="margin-top:10px;">Or call us: 9841777776 | 9842871707 | 9851057480</p>
+        <p style="margin-top:10px;">Or call us: 9841777776 | 9842971707 | 9851057480</p>
         <p>Email: <a href="mailto:pbbp922@gmail.com">pbbp922@gmail.com</a></p>
     </div>
 </div>
