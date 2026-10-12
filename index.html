@@ -2,846 +2,1063 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Resonance Agro Farm Pvt. | Fresh Cow Milk</title>
-
-<meta name="description" content="Discover fresh cow milk from Resonance Agro Farm Pvt. Contact us to place your milk order in Nepal.">
-
-<style>
-:root {
-    --green: #24583f;
-    --dark-green: #173d2c;
-    --light-green: #edf5ed;
-    --cream: #fbfaf5;
-    --gold: #d5b46b;
-    --text: #243329;
-    --muted: #68756b;
-    --white: #ffffff;
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: var(--cream);
-    color: var(--text);
-    line-height: 1.7;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.container {
-    width: min(1120px, 90%);
-    margin: auto;
-}
-
-/* Navigation */
-
-header {
-    background: var(--white);
-    border-bottom: 1px solid #e8eee7;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.navbar {
-    min-height: 82px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.brand {
-    color: var(--dark-green);
-    font-size: 21px;
-    font-weight: 800;
-    line-height: 1.25;
-}
-
-.brand span {
-    display: block;
-    color: var(--muted);
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-top: 5px;
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.nav-links a:hover {
-    color: var(--green);
-}
-
-.nav-order {
-    background: var(--green);
-    color: white !important;
-    padding: 11px 20px;
-    border-radius: 7px;
-}
-
-/* Hero section */
-
-.hero {
-    min-height: 530px;
-    display: flex;
-    align-items: center;
-    color: white;
-    background:
-        linear-gradient(90deg,
-            rgba(13, 35, 23, 0.82),
-            rgba(13, 35, 23, 0.35)),
-        url("https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1800&q=85")
-        center/cover no-repeat;
-}
-
-.hero-content {
-    max-width: 690px;
-    padding: 85px 0;
-}
-
-.eyebrow {
-    color: var(--gold);
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-bottom: 18px;
-}
-
-.hero h1 {
-    font-size: clamp(38px, 6vw, 66px);
-    line-height: 1.12;
-    margin-bottom: 22px;
-    letter-spacing: -1.5px;
-}
-
-.hero p {
-    font-size: 17px;
-    max-width: 540px;
-    color: #f0f4ef;
-    margin-bottom: 30px;
-}
-
-.button {
-    display: inline-block;
-    background: var(--green);
-    color: white;
-    padding: 13px 25px;
-    border-radius: 7px;
-    font-weight: bold;
-    border: 1px solid var(--green);
-    transition: 0.2s ease;
-}
-
-.button:hover {
-    background: var(--dark-green);
-    transform: translateY(-2px);
-}
-
-.button-light {
-    background: white;
-    color: var(--dark-green);
-    border-color: white;
-}
-
-.button-light:hover {
-    background: #edf5ed;
-    color: var(--dark-green);
-}
-
-/* Benefits */
-
-.benefits {
-    background: white;
-    border-bottom: 1px solid #e8eee7;
-}
-
-.benefit-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    padding: 27px 0;
-    text-align: center;
-}
-
-.benefit {
-    font-size: 14px;
-    font-weight: bold;
-    color: var(--dark-green);
-}
-
-.benefit span {
-    display: block;
-    font-size: 12px;
-    font-weight: normal;
-    color: var(--muted);
-    margin-top: 4px;
-}
-
-/* Product section */
-
-.section {
-    padding: 90px 0;
-}
-
-.section-heading {
-    text-align: center;
-    max-width: 650px;
-    margin: 0 auto 42px;
-}
-
-.section-heading .eyebrow {
-    color: var(--green);
-    margin-bottom: 8px;
-}
-
-.section-heading h2 {
-    color: var(--dark-green);
-    font-size: clamp(30px, 4vw, 42px);
-    line-height: 1.25;
-    margin-bottom: 14px;
-}
-
-.section-heading p {
-    color: var(--muted);
-}
-
-.product-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 45px;
-    align-items: center;
-    max-width: 930px;
-    margin: auto;
-}
-
-.product-image {
-    width: 100%;
-    height: 380px;
-    object-fit: cover;
-    border-radius: 14px;
-    display: block;
-    background: var(--light-green);
-}
-
-.product-info {
-    padding: 10px 0;
-}
-
-.product-label {
-    display: inline-block;
-    color: var(--green);
-    background: var(--light-green);
-    padding: 5px 12px;
-    border-radius: 30px;
-    font-size: 12px;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-.product-info h3 {
-    font-size: 34px;
-    color: var(--dark-green);
-    margin-bottom: 12px;
-}
-
-.product-info p {
-    color: var(--muted);
-    margin-bottom: 18px;
-}
-
-.product-points {
-    list-style: none;
-    margin-bottom: 26px;
-}
-
-.product-points li {
-    margin: 9px 0;
-    font-size: 14px;
-}
-
-.product-points li::before {
-    content: "✓";
-    color: var(--green);
-    font-weight: bold;
-    margin-right: 10px;
-}
-
-/* About section */
-
-.about {
-    background: var(--light-green);
-    text-align: center;
-}
-
-.about-inner {
-    max-width: 760px;
-    margin: auto;
-}
-
-.about h2 {
-    color: var(--dark-green);
-    font-size: 34px;
-    margin-bottom: 18px;
-}
-
-.about p {
-    color: #56665a;
-    margin-bottom: 25px;
-}
-
-/* Contact */
-
-.contact-section {
-    background: var(--cream);
-}
-
-.contact-layout {
-    display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 45px;
-    align-items: start;
-}
-
-.contact-info h2 {
-    color: var(--dark-green);
-    font-size: 36px;
-    line-height: 1.2;
-    margin-bottom: 17px;
-}
-
-.contact-info > p {
-    color: var(--muted);
-    margin-bottom: 25px;
-}
-
-.contact-detail {
-    margin: 17px 0;
-    font-size: 14px;
-    overflow-wrap: anywhere;
-}
-
-.contact-detail strong {
-    display: block;
-    color: var(--dark-green);
-    margin-bottom: 3px;
-}
-
-.contact-detail a {
-    color: var(--green);
-}
-
-.contact-form {
-    background: white;
-    padding: 30px;
-    border-radius: 14px;
-    border: 1px solid #e6ece4;
-    box-shadow: 0 10px 35px rgba(30, 60, 40, 0.06);
-}
-
-.contact-form h3 {
-    font-size: 22px;
-    color: var(--dark-green);
-    margin-bottom: 5px;
-}
-
-.form-intro {
-    font-size: 13px;
-    color: var(--muted);
-    margin-bottom: 20px;
-}
-
-.contact-form label {
-    display: block;
-    font-size: 13px;
-    font-weight: bold;
-    margin: 14px 0 6px;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 13px 14px;
-    border: 1px solid #d8e0d7;
-    border-radius: 7px;
-    font: inherit;
-    font-size: 14px;
-    background: #fdfefd;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    outline: 2px solid #a8cbb0;
-    border-color: var(--green);
-}
-
-.contact-form textarea {
-    min-height: 115px;
-    resize: vertical;
-}
-
-.contact-form button {
-    width: 100%;
-    margin-top: 18px;
-    cursor: pointer;
-    font: inherit;
-    font-weight: bold;
-}
-
-.form-note {
-    text-align: center;
-    color: var(--muted);
-    font-size: 11px;
-    margin-top: 12px;
-}
-
-/* Footer */
-
-footer {
-    background: var(--dark-green);
-    color: white;
-    padding: 30px 0;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.footer-brand {
-    font-weight: bold;
-}
-
-footer p {
-    font-size: 12px;
-    color: #d5e2d7;
-}
-
-/* Floating contact buttons */
-
-.floating-buttons {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    z-index: 200;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.float-btn {
-    width: 53px;
-    height: 53px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 23px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s;
-}
-
-.float-btn:hover {
-    transform: scale(1.08);
-}
-
-.whatsapp-btn {
-    background: #25D366;
-}
-
-.call-btn {
-    background: #2468d8;
-}
-
-/* Mobile responsive */
-
-@media (max-width: 760px) {
-    .navbar {
-        padding: 15px 0;
-        min-height: auto;
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 13px;
-    }
-
-    .nav-links {
-        width: 100%;
-        gap: 17px;
-        flex-wrap: wrap;
-        font-size: 13px;
-    }
-
-    .nav-order {
-        padding: 7px 12px;
-    }
-
-    .hero {
-        min-height: 460px;
-        background-position: center;
-    }
-
-    .hero-content {
-        padding: 65px 0;
-    }
-
-    .hero p {
-        font-size: 15px;
-    }
-
-    .benefit-grid {
-        grid-template-columns: 1fr;
-        gap: 18px;
-        padding: 25px 0;
-    }
-
-    .section {
-        padding: 65px 0;
-    }
-
-    .product-layout,
-    .contact-layout {
-        grid-template-columns: 1fr;
-        gap: 28px;
-    }
-
-    .product-image {
-        height: 290px;
-    }
-
-    .product-info h3 {
-        font-size: 29px;
-    }
-
-    .contact-form {
-        padding: 22px;
-    }
-
-    .about h2,
-    .contact-info h2 {
-        font-size: 30px;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .floating-buttons {
-        right: 13px;
-        bottom: 13px;
-    }
-
-    .float-btn {
-        width: 47px;
-        height: 47px;
-    }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Resonance Agro Farm Pvt. provides fresh cow milk and quality dairy products in Budhanilkantha, Kathmandu, Nepal.">
+    <meta name="theme-color" content="#174c32">
+
+    <title>Resonance Agro Farm Pvt. | Fresh Cow Milk</title>
+
+    <style>
+        :root {
+            --green: #174c32;
+            --dark-green: #103722;
+            --light-green: #eaf3e8;
+            --cream: #faf9f3;
+            --white: #ffffff;
+            --text: #26352b;
+            --muted: #66736a;
+            --gold: #d9b76a;
+            --shadow: 0 12px 35px rgba(20, 55, 35, 0.10);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img,
+        video {
+            max-width: 100%;
+        }
+
+        .container {
+            width: min(1120px, 90%);
+            margin: 0 auto;
+        }
+
+        /* Header */
+
+        header {
+            background: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+        }
+
+        .navbar {
+            min-height: 82px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .logo {
+            color: var(--green);
+            font-size: 21px;
+            font-weight: 800;
+            line-height: 1.3;
+        }
+
+        .logo span {
+            display: block;
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: var(--muted);
+            font-weight: 600;
+            margin-top: 4px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        nav a {
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #478451;
+        }
+
+        .nav-button {
+            background: var(--green);
+            color: var(--white);
+            padding: 11px 19px;
+            border-radius: 7px;
+        }
+
+        .nav-button:hover {
+            background: var(--dark-green);
+            color: var(--white);
+        }
+
+        /* Hero */
+
+        .hero {
+            min-height: 590px;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(9, 35, 20, 0.86),
+                    rgba(9, 35, 20, 0.42)
+                ),
+                url("https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1800&q=85")
+                center / cover no-repeat;
+        }
+
+        .hero-content {
+            max-width: 690px;
+            padding: 85px 0;
+        }
+
+        .eyebrow {
+            color: var(--gold);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 12px;
+            margin-bottom: 17px;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 6vw, 66px);
+            line-height: 1.12;
+            margin-bottom: 23px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            max-width: 570px;
+            color: #f0f4ef;
+            margin-bottom: 32px;
+        }
+
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 13px;
+        }
+
+        .button {
+            display: inline-block;
+            border: none;
+            padding: 14px 23px;
+            border-radius: 7px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+        }
+
+        .button-primary {
+            background: var(--gold);
+            color: #172a1c;
+        }
+
+        .button-secondary {
+            border: 1px solid rgba(255, 255, 255, 0.75);
+            color: var(--white);
+            background: transparent;
+        }
+
+        /* Benefits */
+
+        .benefits {
+            padding: 30px 0;
+            background: var(--white);
+        }
+
+        .benefit-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .benefit {
+            text-align: center;
+            padding: 16px;
+        }
+
+        .benefit-icon {
+            font-size: 28px;
+            margin-bottom: 6px;
+        }
+
+        .benefit h3 {
+            font-size: 16px;
+            color: var(--green);
+        }
+
+        .benefit p {
+            color: var(--muted);
+            font-size: 13px;
+            margin-top: 4px;
+        }
+
+        /* General sections */
+
+        section {
+            scroll-margin-top: 95px;
+        }
+
+        .section {
+            padding: 85px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 45px;
+        }
+
+        .section-heading .eyebrow {
+            color: #54835a;
+            margin-bottom: 9px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(29px, 4vw, 42px);
+            line-height: 1.2;
+            color: var(--green);
+            margin-bottom: 15px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+        }
+
+        /* Product */
+
+        .product-card {
+            display: grid;
+            grid-template-columns: 1.05fr 1fr;
+            align-items: center;
+            gap: 55px;
+            background: var(--white);
+            padding: 28px;
+            border-radius: 18px;
+            box-shadow: var(--shadow);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 14px;
+            display: block;
+            background: var(--light-green);
+        }
+
+        .product-info h3 {
+            font-size: 31px;
+            color: var(--green);
+            margin-bottom: 15px;
+        }
+
+        .product-info p {
+            color: var(--muted);
+            margin-bottom: 18px;
+        }
+
+        .product-features {
+            list-style: none;
+            margin: 20px 0 27px;
+        }
+
+        .product-features li {
+            margin: 10px 0;
+        }
+
+        .product-features li::before {
+            content: "✓";
+            color: #39804b;
+            font-weight: 800;
+            margin-right: 10px;
+        }
+
+        .product-note {
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 13px;
+        }
+
+        /* About */
+
+        .about {
+            background: var(--light-green);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 55px;
+        }
+
+        .about h2 {
+            color: var(--green);
+            font-size: clamp(29px, 4vw, 42px);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            color: #53645a;
+            margin-bottom: 17px;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        /* Contact */
+
+        .contact {
+            background: var(--white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 45px;
+        }
+
+        .contact-information {
+            background: var(--green);
+            color: var(--white);
+            padding: 35px;
+            border-radius: 15px;
+        }
+
+        .contact-information h3 {
+            font-size: 26px;
+            margin-bottom: 12px;
+        }
+
+        .contact-information > p {
+            color: #e0e9e1;
+            margin-bottom: 25px;
+        }
+
+        .contact-detail {
+            margin: 24px 0;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-detail strong {
+            display: block;
+            color: var(--gold);
+            margin-bottom: 5px;
+        }
+
+        .contact-detail a {
+            display: inline-block;
+            color: var(--white);
+            margin: 2px 0;
+        }
+
+        .contact-detail a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-form {
+            padding: 12px 0;
+        }
+
+        .contact-form h3 {
+            font-size: 26px;
+            color: var(--green);
+            margin-bottom: 8px;
+        }
+
+        .contact-form > p {
+            color: var(--muted);
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 17px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 7px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid #d9e0d9;
+            border-radius: 7px;
+            font: inherit;
+            background: #fcfdfb;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--green);
+            box-shadow: 0 0 0 3px rgba(23, 76, 50, 0.08);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .contact-form .button {
+            width: 100%;
+            background: var(--green);
+            color: var(--white);
+        }
+
+        .contact-form .button:hover {
+            background: var(--dark-green);
+        }
+
+        /* Footer */
+
+        footer {
+            background: #0e2d1d;
+            color: #e8eee8;
+            padding: 30px 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-brand {
+            font-weight: 800;
+            font-size: 17px;
+        }
+
+        .footer-content p {
+            font-size: 13px;
+            color: #c4d1c6;
+        }
+
+        /* Floating contact buttons */
+
+        .floating-buttons {
+            position: fixed;
+            right: 18px;
+            bottom: 18px;
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            gap: 11px;
+        }
+
+        .floating-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 17px;
+            border-radius: 50px;
+            color: var(--white);
+            font-size: 14px;
+            font-weight: 700;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .whatsapp-button {
+            background: #25d366;
+            color: #073b1c;
+        }
+
+        .call-button {
+            background: var(--green);
+        }
+
+        /* Responsive layout */
+
+        @media (max-width: 800px) {
+            .navbar {
+                padding: 15px 0;
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 13px;
+            }
+
+            nav {
+                width: 100%;
+                flex-wrap: wrap;
+                gap: 12px 18px;
+            }
+
+            nav a {
+                font-size: 13px;
+            }
+
+            .hero {
+                min-height: 510px;
+            }
+
+            .benefit-grid {
+                grid-template-columns: 1fr;
+                gap: 5px;
+            }
+
+            .product-card,
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .product-image {
+                height: 300px;
+            }
+
+            .about-image {
+                height: 300px;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .product-card {
+                padding: 18px;
+            }
+
+            .contact-information {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .logo {
+                font-size: 19px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .button {
+                padding: 12px 16px;
+            }
+
+            .floating-buttons {
+                right: 10px;
+                bottom: 10px;
+            }
+
+            .floating-button {
+                padding: 10px 13px;
+                font-size: 12px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
-    <div class="container navbar">
-        <a href="#home" class="brand">
-            Resonance Agro Farm
-            <span>Private Limited</span>
-        </a>
+    <!-- Header -->
+    <header>
+        <div class="container navbar">
+            <a href="#home" class="logo">
+                Resonance Agro Farm
+                <span>PRIVATE LIMITED</span>
+            </a>
 
-        <nav class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#milk">Our Milk</a>
-            <a href="#about">About Us</a>
-            <a href="#contact" class="nav-order">Order Milk</a>
-        </nav>
-    </div>
-</header>
-
-<main>
-
-    <!-- Homepage banner -->
-
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <div class="eyebrow">Freshness from the farm</div>
-
-                <h1>Good Milk.<br>Better Everyday.</h1>
-
-                <p>
-                    Discover fresh cow milk from Resonance Agro Farm.
-                    Contact our team to ask about availability and place
-                    your order.
-                </p>
-
-                <a href="#contact" class="button button-light">
-                    Order Fresh Milk →
-                </a>
-            </div>
+            <nav aria-label="Main navigation">
+                <a href="#home">Home</a>
+                <a href="#products">Products</a>
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
+                <a href="#contact" class="nav-button">Order Now</a>
+            </nav>
         </div>
-    </section>
+    </header>
 
-    <!-- Benefits -->
+    <main>
 
-    <section class="benefits">
-        <div class="container benefit-grid">
-            <div class="benefit">
-                Fresh Cow Milk
-                <span>A simple everyday dairy essential</span>
-            </div>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <p class="eyebrow">Freshness From Our Farm</p>
 
-            <div class="benefit">
-                Direct Contact
-                <span>Speak with us about your order</span>
-            </div>
-
-            <div class="benefit">
-                Easy Ordering
-                <span>Send your request through WhatsApp</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Only product: milk -->
-
-    <section class="section" id="milk">
-        <div class="container">
-
-            <div class="section-heading">
-                <div class="eyebrow">Our Product</div>
-                <h2>Fresh Cow Milk</h2>
-                <p>
-                    Simple, fresh dairy for your daily needs.
-                    Contact us to enquire about availability,
-                    quantity, and delivery.
-                </p>
-            </div>
-
-            <div class="product-layout">
-
-                <img
-                    class="product-image"
-                    src="https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=1000&q=85"
-                    alt="Fresh milk in a glass and milk bottle"
-                    loading="lazy"
-                >
-
-                <div class="product-info">
-                    <span class="product-label">Our Featured Product</span>
-
-                    <h3>Fresh Cow Milk</h3>
+                    <h1>Pure Goodness in Every Drop</h1>
 
                     <p>
-                        Make milk part of your everyday routine.
-                        Contact Resonance Agro Farm to discuss your
-                        required quantity and order.
+                        Welcome to Resonance Agro Farm Pvt. We are dedicated
+                        to bringing fresh cow milk and quality dairy products
+                        to your family in Budhanilkantha, Kathmandu, Nepal.
                     </p>
 
-                    <ul class="product-points">
-                        <li>Available for customer enquiries</li>
-                        <li>Ask us about quantity and pricing</li>
-                        <li>Contact us directly to order</li>
-                    </ul>
+                    <div class="button-group">
+                        <a href="#products" class="button button-primary">
+                            Explore Our Products
+                        </a>
 
-                    <a href="#contact" class="button">
-                        Enquire About Milk
-                    </a>
+                        <a href="#contact" class="button button-secondary">
+                            Contact Our Farm
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="benefits" aria-label="Our commitments">
+            <div class="container benefit-grid">
+
+                <div class="benefit">
+                    <div class="benefit-icon">🥛</div>
+                    <h3>Fresh Dairy</h3>
+                    <p>Fresh cow milk for your everyday needs.</p>
+                </div>
+
+                <div class="benefit">
+                    <div class="benefit-icon">🐄</div>
+                    <h3>Farm Focused</h3>
+                    <p>Committed to responsible dairy farming.</p>
+                </div>
+
+                <div class="benefit">
+                    <div class="benefit-icon">🌿</div>
+                    <h3>Quality First</h3>
+                    <p>Focused on quality and customer satisfaction.</p>
                 </div>
 
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About section -->
+        <!-- Products Section -->
+        <section class="section" id="products">
+            <div class="container">
 
-    <section class="section about" id="about">
-        <div class="container about-inner">
-            <div class="eyebrow">About Our Farm</div>
+                <div class="section-heading">
+                    <p class="eyebrow">Our Products</p>
+                    <h2>Fresh From Our Farm</h2>
+                    <p>
+                        Discover our dairy products and contact us to ask
+                        about availability, quantities and orders.
+                    </p>
+                </div>
 
-            <h2>Welcome to Resonance Agro Farm</h2>
+                <div class="product-card">
+
+                    <div>
+                        <video
+                            class="product-image"
+                            autoplay
+                            muted
+                            loop
+                            playsinline
+                            preload="metadata"
+                            aria-label="Fresh milk pouring from a jug into a glass"
+                            poster="https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=1000&q=85"
+                        >
+                            <source
+                                src="milk-pouring.mp4"
+                                type="video/mp4"
+                            >
+                            Your browser does not support video playback.
+                        </video>
+                    </div>
+
+                    <div class="product-info">
+                        <p class="eyebrow">Farm Fresh</p>
+
+                        <h3>Fresh Cow Milk</h3>
+
+                        <p>
+                            Enjoy fresh cow milk from Resonance Agro Farm.
+                            Contact our team for current availability,
+                            pricing and delivery information.
+                        </p>
+
+                        <ul class="product-features">
+                            <li>Fresh dairy for everyday use</li>
+                            <li>Suitable for tea, coffee and cooking</li>
+                            <li>Ask us about available quantities</li>
+                            <li>Contact us directly to place an order</li>
+                        </ul>
+
+                        <a
+                            href="https://wa.me/9779841777776?text=Hello%20Resonance%20Agro%20Farm%2C%20I%20would%20like%20to%20order%20fresh%20cow%20milk."
+                            class="button button-primary"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Order on WhatsApp
+                        </a>
+
+                        <p class="product-note">
+                            Please contact us for current prices and availability.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section about" id="about">
+            <div class="container about-grid">
+
+                <div>
+                    <p class="eyebrow">About Our Farm</p>
+
+                    <h2>Bringing Farm Freshness Closer to You</h2>
+
+                    <p>
+                        Resonance Agro Farm Pvt. is a farming business
+                        located in Budhanilkantha, Kathmandu, Nepal.
+                        Our aim is to serve customers with fresh dairy
+                        products and dependable customer service.
+                    </p>
+
+                    <p>
+                        We believe that good service begins with listening
+                        to our customers. Contact us to learn more about
+                        our products, availability and ordering process.
+                    </p>
+
+                    <a href="#contact" class="button button-primary">
+                        Get in Touch
+                    </a>
+                </div>
+
+                <div>
+                    <img
+                        class="about-image"
+                        src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=85"
+                        alt="Green agricultural fields in a rural landscape"
+                        loading="lazy"
+                    >
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section contact" id="contact">
+            <div class="container">
+
+                <div class="section-heading">
+                    <p class="eyebrow">Contact Us</p>
+                    <h2>We Would Love to Hear From You</h2>
+                    <p>
+                        Have a question or want to place an order?
+                        Contact Resonance Agro Farm using the details below.
+                    </p>
+                </div>
+
+                <div class="contact-grid">
+
+                    <!-- Contact Information -->
+                    <div class="contact-information">
+                        <h3>Get in Touch</h3>
+
+                        <p>
+                            Reach out to us for product information,
+                            availability and orders.
+                        </p>
+
+                        <div class="contact-detail">
+                            <strong>Call Us</strong>
+
+                            <a href="tel:+9779842971707">
+                                9842971707
+                            </a>
+                            <br>
+
+                            <a href="tel:+9779851057480">
+                                9851057480
+                            </a>
+                        </div>
+
+                        <div class="contact-detail">
+                            <strong>Email Us</strong>
+
+                            <a href="mailto:pbbp922@gmail.com">
+                                pbbp922@gmail.com
+                            </a>
+                            <br>
+
+                            <a href="mailto:padambaral04@gmail.com">
+                                padambaral04@gmail.com
+                            </a>
+                        </div>
+
+                        <div class="contact-detail">
+                            <strong>Our Location</strong>
+
+                            <p>
+                                Budhanilkantha, Kathmandu, Nepal
+                            </p>
+                        </div>
+
+                        <div class="contact-detail">
+                            <strong>WhatsApp Orders</strong>
+
+                            <a
+                                href="https://wa.me/9779841777776"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Chat with us on WhatsApp
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <!-- Order Form -->
+                    <div class="contact-form">
+                        <h3>Place an Order</h3>
+
+                        <p>
+                            Fill in your details and send your order
+                            through WhatsApp.
+                        </p>
+
+                        <form id="orderForm">
+
+                            <div class="form-group">
+                                <label for="customerName">
+                                    Your Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="customerName"
+                                    name="customerName"
+                                    placeholder="Enter your full name"
+                                    required
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="customerPhone">
+                                    Your Phone Number
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="customerPhone"
+                                    name="customerPhone"
+                                    placeholder="Enter your phone number"
+                                    required
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="product">
+                                    Select Product
+                                </label>
+
+                                <select
+                                    id="product"
+                                    name="product"
+                                    required
+                                >
+                                    <option value="">
+                                        Select a product
+                                    </option>
+
+                                    <option value="Fresh Cow Milk">
+                                        Fresh Cow Milk
+                                    </option>
+
+                                    <option value="Product Enquiry">
+                                        General Product Enquiry
+                                    </option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="quantity">
+                                    Quantity / Order Details
+                                </label>
+
+                                <textarea
+                                    id="quantity"
+                                    name="quantity"
+                                    placeholder="Enter quantity and any special instructions"
+                                    required
+                                ></textarea>
+                            </div>
+
+                            <button
+                                type="submit"
+                                class="button"
+                            >
+                                Send Order on WhatsApp
+                            </button>
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+
+            <div>
+                <div class="footer-brand">
+                    Resonance Agro Farm Pvt.
+                </div>
+
+                <p>Freshness from our farm to your family.</p>
+            </div>
 
             <p>
-                We are proud to connect our customers with dairy
-                products through Resonance Agro Farm Pvt.
-                Our focus on this website is simple: fresh cow milk,
-                easy ordering, and direct communication with our team.
+                &copy; <span id="currentYear"></span>
+                Resonance Agro Farm Pvt. All rights reserved.
             </p>
 
-            <a href="#contact" class="button">
-                Get in Touch
-            </a>
         </div>
-    </section>
+    </footer>
 
-    <!-- Contact and order form -->
+    <!-- Floating WhatsApp and Call Buttons -->
+    <div class="floating-buttons">
 
-    <section class="section contact-section" id="contact">
-        <div class="container contact-layout">
+        <a
+            class="floating-button whatsapp-button"
+            href="https://wa.me/9779841777776?text=Hello%20Resonance%20Agro%20Farm"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Contact us on WhatsApp"
+        >
+            <span aria-hidden="true">●</span>
+            WhatsApp
+        </a>
 
-            <div class="contact-info">
-                <div class="eyebrow">Contact Us</div>
+        <a
+            class="floating-button call-button"
+            href="tel:+9779842971707"
+            aria-label="Call Resonance Agro Farm"
+        >
+            <span aria-hidden="true">☎</span>
+            Call Us
+        </a>
 
-                <h2>Let's Talk Milk.</h2>
-
-                <p>
-                    Have a question or want to place an order?
-                    Send us a WhatsApp message or contact us directly.
-                </p>
-
-                <div class="contact-detail">
-                    <strong>Call Us</strong>
-                    <a href="tel:+9779842971707">9842971707</a><br>
-                    <a href="tel:+9779851057480">9851057480</a>
-                </div>
-
-                <div class="contact-detail">
-                    <strong>Email Us</strong>
-                    <a href="mailto:pbbp922@gmail.com">
-                        pbbp922@gmail.com
-                    </a>
-                </div>
-
-                <div class="contact-detail">
-                    <strong>Location</strong>
-                    Budhanilkantha, Kathmandu, Nepal
-                </div>
-            </div>
-
-            <form class="contact-form" id="orderForm">
-                <h3>Place Your Milk Order</h3>
-
-                <p class="form-intro">
-                    Fill in your details to send your request through WhatsApp.
-                </p>
-
-                <label for="customerName">Your Name</label>
-                <input
-                    type="text"
-                    id="customerName"
-                    name="customerName"
-                    placeholder="Enter your name"
-                    autocomplete="name"
-                    required
-                >
-
-                <label for="customerPhone">Phone Number</label>
-                <input
-                    type="tel"
-                    id="customerPhone"
-                    name="customerPhone"
-                    placeholder="Enter your phone number"
-                    autocomplete="tel"
-                    required
-                >
-
-                <label for="milkQuantity">Milk Quantity / Order Details</label>
-                <textarea
-                    id="milkQuantity"
-                    name="milkQuantity"
-                    placeholder="Example: 2 litres of milk"
-                    required
-                ></textarea>
-
-                <button type="submit" class="button">
-                    Send Order via WhatsApp
-                </button>
-
-                <p class="form-note">
-                    WhatsApp will open so you can review and send your message.
-                </p>
-            </form>
-
-        </div>
-    </section>
-
-</main>
-
-<!-- Footer -->
-
-<footer>
-    <div class="container footer-content">
-        <div class="footer-brand">
-            Resonance Agro Farm Pvt.
-        </div>
-
-        <p>
-            © <span id="year"></span> Resonance Agro Farm.
-            All rights reserved.
-        </p>
     </div>
-</footer>
 
-<!-- Floating WhatsApp and Call buttons -->
+    <script>
+        // Automatically update the footer year.
+        document.getElementById("currentYear").textContent =
+            new Date().getFullYear();
 
-<div class="floating-buttons">
-    <a
-        class="float-btn whatsapp-btn"
-        href="https://api.whatsapp.com/send?phone=9779841777776"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Contact us on WhatsApp"
-        title="WhatsApp"
-    >☏</a>
+        // Send order details to WhatsApp.
+        document.getElementById("orderForm").addEventListener(
+            "submit",
+            function (event) {
+                event.preventDefault();
 
-    <a
-        class="float-btn call-btn"
-        href="tel:+9779841777776"
-        aria-label="Call Resonance Agro Farm"
-        title="Call us"
-    >☎</a>
-</div>
+                const name = document
+                    .getElementById("customerName")
+                    .value.trim();
 
-<script>
-document.getElementById("year").textContent =
-    new Date().getFullYear();
+                const phone = document
+                    .getElementById("customerPhone")
+                    .value.trim();
 
-document.getElementById("orderForm").addEventListener("submit", function(e) {
-    e.preventDefault();
+                const product = document
+                    .getElementById("product")
+                    .value;
 
-    const name = document.getElementById("customerName").value.trim();
-    const phone = document.getElementById("customerPhone").value.trim();
-    const order = document.getElementById("milkQuantity").value.trim();
+                const quantity = document
+                    .getElementById("quantity")
+                    .value.trim();
 
-    const message =
-        "Hello Resonance Agro Farm Pvt.!\n\n" +
-        "My name is " + name + ".\n" +
-        "My phone number is " + phone + ".\n" +
-        "My milk order is: " + order + ".\n\n" +
-        "Please let me know the availability and price. Thank you!";
+                if (!name || !phone || !product || !quantity) {
+                    alert("Please complete all fields before sending your order.");
+                    return;
+                }
 
-    const whatsappURL =
-        "https://api.whatsapp.com/send?phone=9779841777776&text=" +
-        encodeURIComponent(message);
+                const message =
+                    "Hello Resonance Agro Farm Pvt.!\n\n" +
+                    "I would like to place an order.\n\n" +
+                    "Name: " + name + "\n" +
+                    "Phone: " + phone + "\n" +
+                    "Product: " + product + "\n" +
+                    "Quantity / Details: " + quantity;
 
-    window.open(whatsappURL, "_blank", "noopener,noreferrer");
-});
-</script>
+                const whatsappURL =
+                    "https://wa.me/9779841777776?text=" +
+                    encodeURIComponent(message);
+
+                window.open(
+                    whatsappURL,
+                    "_blank",
+                    "noopener,noreferrer"
+                );
+            }
+        );
+    </script>
 
 </body>
 </html>
