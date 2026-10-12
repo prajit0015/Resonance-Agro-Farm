@@ -722,17 +722,42 @@ footer p {
     35%, 70% { transform: rotate(-42deg); }
 }
 
+
 @keyframes milkFlow {
-    0%, 15% { height: 0; opacity: 0; }
-    25%, 70% { height: 105px; opacity: 1; }
-    85%, 100% { height: 0; opacity: 0; }
+    0%, 20% {
+        height: 0;
+        opacity: 0;
+    }
+    28% {
+        height: 35px;
+        opacity: 1;
+    }
+    40%, 65% {
+        height: 105px;
+        opacity: 1;
+    }
+    75%, 100% {
+        height: 0;
+        opacity: 0;
+    }
 }
 
+
 @keyframes glassFill {
-    0%, 15% { height: 12%; }
-    70% { height: 72%; }
-    90%, 100% { height: 12%; }
+    0%, 20% {
+        height: 12%;
+    }
+    30% {
+        height: 22%;
+    }
+    65% {
+        height: 75%;
+    }
+    78%, 100% {
+        height: 12%;
+    }
 }
+
 
 @keyframes jugMilk {
     0%, 15% { height: 75%; }
