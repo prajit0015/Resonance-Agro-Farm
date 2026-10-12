@@ -562,6 +562,196 @@ footer p {
         height: 47px;
     }
 }
+
+/* Automatic fresh milk pouring animation */
+.milk-pour-animation {
+    width: 100%;
+    min-height: 320px;
+    padding: 20px 10px;
+    background: linear-gradient(#f4fbf3, #ffffff);
+    border-radius: 18px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.pour-scene {
+    position: relative;
+    height: 260px;
+    max-width: 420px;
+    margin: auto;
+}
+
+.milk-jug {
+    position: absolute;
+    top: 25px;
+    left: calc(50% - 115px);
+    width: 125px;
+    height: 145px;
+    transform: rotate(-35deg);
+    transform-origin: 85% 85%;
+    animation: jugTilt 3s ease-in-out infinite;
+    z-index: 3;
+}
+
+.jug-body {
+    position: absolute;
+    left: 12px;
+    bottom: 0;
+    width: 92px;
+    height: 115px;
+    overflow: hidden;
+    border: 4px solid #d6e5e9;
+    border-radius: 24px 24px 30px 30px;
+    background: rgba(255,255,255,.8);
+    box-shadow: inset -10px 0 15px #dce9ed, 3px 5px 12px #00000012;
+}
+
+.jug-milk {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 75%;
+    background: linear-gradient(90deg,#fff,#f0f5f5);
+    animation: jugMilk 3s ease-in-out infinite;
+}
+
+.jug-neck {
+    position: absolute;
+    top: 4px;
+    left: 42px;
+    width: 43px;
+    height: 30px;
+    background: #f7fbfc;
+    border: 4px solid #d6e5e9;
+    border-radius: 8px;
+}
+
+.jug-spout {
+    position: absolute;
+    top: 18px;
+    right: -5px;
+    width: 40px;
+    height: 17px;
+    background: #f7fbfc;
+    border: 4px solid #d6e5e9;
+    border-radius: 4px 14px 4px 4px;
+}
+
+.jug-handle {
+    position: absolute;
+    right: -2px;
+    top: 55px;
+    width: 35px;
+    height: 52px;
+    border: 7px solid #d6e5e9;
+    border-left: 0;
+    border-radius: 0 22px 22px 0;
+}
+
+.milk-stream {
+    position: absolute;
+    top: 90px;
+    left: calc(50% + 3px);
+    width: 10px;
+    height: 0;
+    border-radius: 50%;
+    background: linear-gradient(90deg,#e5edf0,#fff,#e7eff1);
+    transform: rotate(-4deg);
+    transform-origin: top;
+    animation: milkFlow 3s ease-in-out infinite;
+    z-index: 2;
+}
+
+.milk-glass {
+    position: absolute;
+    bottom: 25px;
+    left: calc(50% - 12px);
+    width: 76px;
+    height: 100px;
+    border: 3px solid #d7e5e8;
+    border-top: 4px solid #c7dce1;
+    border-radius: 5px 5px 18px 18px;
+    background: #ffffff70;
+    overflow: hidden;
+    box-shadow: 0 8px 14px #00000010;
+    z-index: 1;
+}
+
+.glass-milk {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 12%;
+    background: linear-gradient(90deg,#edf2f2,#fff,#edf2f2);
+    animation: glassFill 3s ease-in-out infinite;
+}
+
+.glass-shine {
+    position: absolute;
+    left: 9px;
+    top: 10px;
+    height: 65%;
+    width: 5px;
+    border-radius: 5px;
+    background: #ffffffd9;
+}
+
+.pour-splash {
+    position: absolute;
+    bottom: 112px;
+    left: calc(50% + 10px);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: -10px 4px 0 #f3f6f6, 10px 7px 0 #edf2f2;
+    opacity: 0;
+    animation: milkSplash 3s infinite;
+    z-index: 4;
+}
+
+.animation-caption {
+    margin: 0;
+    color: #287044;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+@keyframes jugTilt {
+    0%, 10%, 90%, 100% { transform: rotate(-20deg); }
+    35%, 70% { transform: rotate(-42deg); }
+}
+
+@keyframes milkFlow {
+    0%, 15% { height: 0; opacity: 0; }
+    25%, 70% { height: 105px; opacity: 1; }
+    85%, 100% { height: 0; opacity: 0; }
+}
+
+@keyframes glassFill {
+    0%, 15% { height: 12%; }
+    70% { height: 72%; }
+    90%, 100% { height: 12%; }
+}
+
+@keyframes jugMilk {
+    0%, 15% { height: 75%; }
+    70%, 90% { height: 35%; }
+    100% { height: 75%; }
+}
+
+@keyframes milkSplash {
+    0%, 25%, 75%, 100% { opacity: 0; transform: scale(.5); }
+    40%, 65% { opacity: 1; transform: scale(1.3); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .milk-pour-animation *,
+    .milk-pour-animation *::before {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
 </style>
 </head>
 
@@ -645,12 +835,29 @@ footer p {
 
             <div class="product-layout">
 
-                <img
-                    class="product-image"
-                    src="https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=1000&q=85"
-                    alt="Fresh milk in a glass and milk bottle"
-                    loading="lazy"
-                >
+               
+<div class="milk-pour-animation" role="img" aria-label="Animated jug pouring fresh milk into a glass">
+    <div class="pour-scene">
+        <div class="milk-jug">
+            <div class="jug-handle"></div>
+            <div class="jug-body">
+                <div class="jug-milk"></div>
+            </div>
+            <div class="jug-neck"></div>
+            <div class="jug-spout"></div>
+        </div>
+
+        <div class="milk-stream"></div>
+
+        <div class="milk-glass">
+            <div class="glass-milk"></div>
+            <div class="glass-shine"></div>
+        </div>
+
+        <div class="pour-splash"></div>
+    </div>
+    <p class="animation-caption">Fresh milk, straight from our farm</p>
+</div>
 
                 <div class="product-info">
                     <span class="product-label">Our Featured Product</span>
